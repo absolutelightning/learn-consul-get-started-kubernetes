@@ -7,15 +7,17 @@ global:
   name: consul
   # The consul image version.
   image: hashicorp/consul:1.16.0
+  imageK8S: absolutelightning/controlplane-log-dp
+  logLevelDataplane: "warn"
   # The name of the datacenter that the agents should register as.
   datacenter: dc1
   # Enables TLS across the cluster to verify authenticity of the Consul servers and clients.
   tls:
-    enabled: true
+    enabled: false
   # Enables ACLs across the cluster to secure access to data and APIs.
   acls:
     # If true, automatically manage ACL tokens and policies for all Consul components.
-    manageSystemACLs: true
+    manageSystemACLs: false
   # Exposes Prometheus metrics for the Consul service mesh and sidecars.
   metrics:
     enabled: true
